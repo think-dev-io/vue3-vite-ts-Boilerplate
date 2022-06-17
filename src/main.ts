@@ -1,7 +1,10 @@
 import { createApp } from 'vue'
+import { createHead } from '@vueuse/head'
 
 import router from '@/routes'
 import { store } from '@/store'
 import App from '@/App.vue'
 
-createApp(App).use(router).use(store).mount('#app')
+const head = createHead()
+
+createApp(App).use(head).use(router).use(store).mount('#app')

@@ -1,5 +1,6 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
+import { useHead } from '@vueuse/head'
 import HelloWorld from '@/components/HelloWorld.vue'
 import { store } from '@/store'
 
@@ -9,6 +10,20 @@ export default defineComponent({
     HelloWorld,
   },
   setup() {
+    useHead({
+      title: 'Default title',
+      meta: [
+        {
+          name: 'description',
+          content: 'This is a DEFAULT description',
+        },
+        {
+          name: 'other-stuff',
+          content: 'This is some OTHER stuff',
+        },
+      ],
+    })
+
     const addTwo = () => store.commit('add', 2)
     const count = computed(() => store.state.count)
 

@@ -3,7 +3,7 @@ import { createHead } from '@vueuse/head'
 
 import router from '@/routes'
 import { store } from '@/store'
-import App from '@/App.vue'
+import App from './App.vue'
 import './main.css'
 
 const head = createHead()

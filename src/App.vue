@@ -8,7 +8,7 @@ export default defineComponent({
 
 <template>
   <h1>The APP template</h1>
-  <RouterLink to="/">Home</RouterLink> |
+  <RouterLink to="/">{{ $t('hello') }}</RouterLink> |
   <RouterLink to="/about">About</RouterLink>
   <RouterView></RouterView>
 </template>

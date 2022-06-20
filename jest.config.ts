@@ -2,16 +2,13 @@ import type { Config } from '@jest/types'
 
 export default async (): Promise<Config.InitialOptions> => {
   return {
-    moduleFileExtensions: [
-      'js',
-      'ts',
-      'json',
-      'vue', // tell Jest to handle `*.vue` files
-    ],
+    verbose: true,
+    moduleFileExtensions: ['ts', 'js', 'json', 'vue'],
+    testEnvironment: 'jsdom',
     transform: {
       // process `*.vue` files with `vue-jest`
-      '.*\\.(vue)$': 'vue-jest',
+      '^.+\\.ts$': 'ts-jest',
+      '.*\\.(vue)$': '@vue/vue3-jest',
     },
-    verbose: true,
   }
 }
